@@ -78,7 +78,48 @@ Collections:
        - mobile must be exactly 10 digits (e.g., 1234567890).
        - password is hashed using bcryptjs.
 
-    
+
+ 2. Books(books collection)
+
+    - Stores book details and average rating.
+    - Schema (from models/Book.js):
+
+    ```bash
+      {
+        title: { type: String, required: true, trim: true },
+         author: { type: String, required: true, trim: true },
+         genre: { type: String, required: true, trim: true },
+          averageRating: { type: Number, default: 0, min: 0, max: 5 },
+          createdAt: { type: Date, default: Date.now },
+         updatedAt: { type: Date, default: Date.now }
+       }
+    ```
+    - Constraints:
+
+       - averageRating is calculated from reviews (0 if no reviews).
+     
+  
+ 3. Reviews (reviews collection)
+
+    - Stores user reviews for books.
+    - Schema (from models/Review.js):
+
+    ```bash
+      {
+        bookId: { type: Schema.Types.ObjectId, ref: 'Book', required: true },
+        userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        rating: { type: Number, required: true, min: 1, max: 5 },
+        comment: { type: String, trim: true },
+       createdAt: { type: Date, default: Date.now },
+       updatedAt: { type: Date, default: Date.now }
+     }
+    ```
+    - Constraints:
+
+       - bookId references a Book document.
+       - userId references a User document.
+       - rating is an integer between 1 and 5.
+       - One review per user per book (enforced in POST /books/:id/reviews).    
 
 ## 🧪 API ENDPOINTS(Test with Postman)
 
