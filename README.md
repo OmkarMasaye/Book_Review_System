@@ -55,7 +55,8 @@ node index.js
 
 1. **Sign Up**
  
- -POST /auth/signup
+ -POST /auth/signup 
+ 
  -Body:
  ```bash
 {
@@ -73,6 +74,7 @@ node index.js
 2. **Login**
 
 -POST/auth/login
+
 -Body:
 ```bash
 {
@@ -148,6 +150,7 @@ node index.js
    ```
 6. **Create Review **
    -POST/reviews/:id/reviews (Use Book ID)
+   
    -Body
    ```bash
    {
@@ -170,6 +173,7 @@ node index.js
    ```
    7. **Update a Review
       -PUT /reviews/:id (Use Review ID)
+      
       -Body
       ```bash
          {
@@ -192,8 +196,9 @@ node index.js
 
       ```
 
-   8. **Delete a review**
+   9. **Delete a review**
        -DELETE /reviews/:id (Use review ID)
+      
        -Response:
       ```bash
       { message: 'Review deleted' }
