@@ -5,7 +5,7 @@ const Book = require('../models/Book');
 const { authenticate } = require('../middleware/auth');
 
 
-//POST /books/:id/reviews – Submit a review (Authenticated users only, one review per user per book)
+//POST /reviews/:id/reviews – Submit a review (Authenticated users only, one review per user per book)
 router.post('/:id/reviews', authenticate, async (req, res) => {
   try {
     const{rating,comment}=req.body;
