@@ -59,8 +59,8 @@ The API uses a MongoDB database (books) with three collections: users, books, an
 Collections:
  1. Users (users collection)
 
-  - Stores user data for authentication and review ownership.
-  - Schema (from models/User.js):
+    - Stores user data for authentication and review ownership.
+    - Schema (from models/User.js):
 
     ```bash
       {
@@ -72,6 +72,12 @@ Collections:
         updatedAt: Date
       },
     ```
+    - Constraints:
+
+       - username, email, mobile are unique.
+       - mobile must be exactly 10 digits (e.g., 1234567890).
+       - password is hashed using bcryptjs.
+
     
 
 ## 🧪 API ENDPOINTS(Test with Postman)
