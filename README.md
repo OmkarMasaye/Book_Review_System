@@ -54,5 +54,19 @@ node index.js
 ## 🧪 API ENDPOINTS(Test with Postman)
 
 1. **Sign Up**
- POST /signup
+ 
+ POST /auth/signup
+ Body:
+ ```bash
+{
+  "username": "omkar",
+  "email": "omkar@example.com",
+  "password": "omkar@123",
+  "mobile": "9876543210"
+}
+
+2. **Login**
+
+POST/login
+
 
