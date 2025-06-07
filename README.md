@@ -55,18 +55,18 @@ node index.js
 
 1. **Sign Up**
  
- -POST /auth/signup 
+   -POST /auth/signup 
  
- -Body:
- ```bash
-{
-  "username": "omkar",
-  "email": "omkar@example.com",
-  "password": "omkar@123",
-  "mobile": "9876543210"
-}
-```
--Response:
+   -Body:
+   ```bash
+      {
+         "username": "omkar",
+         "email": "omkar@example.com",
+         "password": "omkar@123",
+         "mobile": "9876543210"
+        }
+   ```
+   -Response:
 ```bash
 {"message":"User registered successfully"}
 ```
