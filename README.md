@@ -214,8 +214,7 @@ node index.js
       
    ## 📂 Folder Structure
 
-   ``bash
-   
+   ```bash
         ├── config/
         │   └── db.js
         ├── models/
