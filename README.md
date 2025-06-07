@@ -51,4 +51,8 @@ JWT_SECRET=your_jwt_secret_key
 node index.js
 ```
 
+## 🧪 API ENDPOINTS(Test with Postman)
+
+1. **Sign Up**
+ *POST /signup*
 
