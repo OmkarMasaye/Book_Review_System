@@ -51,6 +51,29 @@ JWT_SECRET=your_jwt_secret_key
 node index.js
 ```
 
+
+## Database Schema 
+
+The API uses a MongoDB database (books) with three collections: users, books, and reviews. Below is the schema design with fields, constraints, and relationships.
+
+Collections:
+ 1. Users (users collection)
+
+  - Stores user data for authentication and review ownership.
+  - Schema (from models/User.js):
+
+    ```bash
+      {
+        username: { type: String, required: true, unique: true },
+        email: { type: String, required: true, unique: true },
+        mobile:{ type: Number, required: true, unique: true},
+        password: { type: String, required: true },
+        createdAt: Date,
+        updatedAt: Date
+      },
+    ```
+    
+
 ## 🧪 API ENDPOINTS(Test with Postman)
 
 1. **Sign Up**
@@ -141,18 +164,19 @@ node index.js
 
      -Response
      ```bash
-     [
-    {
-        "_id": "684443653d39da12463d47f0",
-        "title": "Rich Dad Poor Dad",
-        "author": "Robert T. Kiyosaki",
-        "genre": "Finance",
-        "averageRating": 3,
-        "createdAt": "2025-06-07T13:49:25.786Z",
-        "updatedAt": "2025-06-07T14:35:17.215Z",
-        "__v": 0
-    }
-   ]
+       [
+        {
+          "_id": "684443653d39da12463d47f0",
+          "title": "Rich Dad Poor Dad",
+          "author": "Robert T. Kiyosaki",
+          "genre": "Finance",
+          "averageRating": 3,
+          "createdAt": "2025-06-07T13:49:25.786Z",
+          "updatedAt": "2025-06-07T14:35:17.215Z",
+          "__v": 0
+        }
+      ]
+    
      ```
      
    6. **Create Review **
