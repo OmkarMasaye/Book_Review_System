@@ -54,5 +54,5 @@ node index.js
 ## 🧪 API ENDPOINTS(Test with Postman)
 
 1. **Sign Up**
- *POST /signup*
+ POST /signup
 
