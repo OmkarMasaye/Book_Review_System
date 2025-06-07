@@ -67,31 +67,31 @@ node index.js
         }
    ```
    -Response:
-```bash
-{"message":"User registered successfully"}
+   ```bash
+     {"message":"User registered successfully"}
+   ```
+
+ 2. **Login**
+
+  -POST/auth/login
+
+  -Body:
+  ```bash
+   {
+     "email": "omkar@example.com",
+     "password": "123456"
+   }
 ```
+ -Response:
+  ```bash
+    {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ0MmE1ZjU3OTMyYmY4ZmFkZDUzODMiLCJpYXQiOjE3NDkzMDQwMzd9.Bt7il32xiENEA0Q9zmCuIdCsf7EMKKHQcHzDg7rlmVc","msg":"User login successfully"}
+  ```
+  3. **GET books**
 
-2. **Login**
+   -GET /books?page=1&limit=10&author=Omkar&genre=Fiction
 
--POST/auth/login
-
--Body:
-```bash
-{
-  "email": "omkar@example.com",
-  "password": "123456"
-}
-```
--Response:
-```bash
-{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ0MmE1ZjU3OTMyYmY4ZmFkZDUzODMiLCJpYXQiOjE3NDkzMDQwMzd9.Bt7il32xiENEA0Q9zmCuIdCsf7EMKKHQcHzDg7rlmVc","msg":"User login successfully"}
-```
-3. **GET books**
-
--GET /books?page=1&limit=10&author=Omkar&genre=Fiction
-
--Response
-```bash
+   -Response
+   ```bash
 {
   "books": [
     {
@@ -109,10 +109,10 @@ node index.js
   "totalPages": 1,
   "currentPage": 1
 }
-```
-4. ** Get Book by ID (with average rating + reviews)**
+   ```
+  4. ** Get Book by ID (with average rating + reviews)**
 
-    -GET /books/:id
+   -GET /books/:id
 
    -Response
    ```bash
@@ -134,12 +134,12 @@ node index.js
    "currentPage": 1
    }
    ```
-5. ** Search books by title or author**
+  5. ** Search books by title or author**
 
      -GET/books/search?q=Rich
 
-    -Response
-   ```bash
+     -Response
+     ```bash
      [
     {
         "_id": "684443653d39da12463d47f0",
@@ -152,10 +152,10 @@ node index.js
         "__v": 0
     }
    ]
-   ```
-6. **Create Review **
+     ```
+  6. **Create Review **
 
-    -POST/reviews/:id/reviews (Use Book ID)
+   -POST/reviews/:id/reviews (Use Book ID)
    
    -Body
    ```bash
