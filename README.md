@@ -212,7 +212,47 @@ node index.js
       { message: 'Review deleted' }
       ```
       
+   ## 📂 Folder Structure
+
+   ``bash
    
+        ├── config/
+        │   └── db.js
+        ├── models/
+        │   ├── Book.js
+        │   ├── Review.js
+        │   └── User.js
+        ├── routes/
+        │   ├── books.js
+        │   ├── reviews.js
+        │   └── users.js
+        ├── middleware/
+        │   └── auth.js
+        ├── .env
+        ├── index.js
+        └── package.json
+   ```
+   ## ✅ Assumptions & Design Decisions
+      - Users can submit only one review per book.
+
+      - Only the user who created a review can update or delete it.
+
+      - Ratings are calculated as the average of all submitted reviews for a book.
+
+      - Search is case-insensitive and supports partial match for titles and authors.
+
+   ## 📬 API Testing with Postman
+   
+      To test this API, use Postman with:
+
+       1.Bearer token (from login) for authenticated routes
+
+       2.JSON body format
+
+       3.Sample request/response examples as shown above
+
+
+
    
 
 
