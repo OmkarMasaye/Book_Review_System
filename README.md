@@ -89,6 +89,7 @@ node index.js
 3. **GET books**
 
 -GET /books?page=1&limit=10&author=Omkar&genre=Fiction
+
 -Response
 ```bash
 {
@@ -110,7 +111,9 @@ node index.js
 }
 ```
 4. ** Get Book by ID (with average rating + reviews)**
-   -GET /books/:id
+
+    -GET /books/:id
+
    -Response
    ```bash
    {
@@ -131,9 +134,11 @@ node index.js
    "currentPage": 1
    }
    ```
-5. ** Search books by title or author**
-    -GET/books/search?q=Rich
-   -Response
+6. ** Search books by title or author**
+
+     -GET/books/search?q=Rich
+
+    -Response
    ```bash
      [
     {
@@ -148,8 +153,9 @@ node index.js
     }
    ]
    ```
-6. **Create Review **
-   -POST/reviews/:id/reviews (Use Book ID)
+8. **Create Review **
+
+    -POST/reviews/:id/reviews (Use Book ID)
    
    -Body
    ```bash
@@ -172,6 +178,7 @@ node index.js
       }
    ```
    7. **Update a Review
+    
       -PUT /reviews/:id (Use Review ID)
       
       -Body
@@ -197,6 +204,7 @@ node index.js
       ```
 
    9. **Delete a review**
+
        -DELETE /reviews/:id (Use review ID)
       
        -Response:
