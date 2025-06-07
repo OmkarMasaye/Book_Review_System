@@ -214,7 +214,6 @@ node index.js
       
    ## 📂 Folder Structure
 
-   ```bash
         ├── config/
         │   └── db.js
         ├── models/
@@ -230,7 +229,7 @@ node index.js
         ├── .env
         ├── index.js
         └── package.json
-   ```
+
    ## ✅ Assumptions & Design Decisions
       - Users can submit only one review per book.
 
