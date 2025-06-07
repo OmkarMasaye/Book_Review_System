@@ -134,7 +134,7 @@ node index.js
    "currentPage": 1
    }
    ```
-6. ** Search books by title or author**
+5. ** Search books by title or author**
 
      -GET/books/search?q=Rich
 
@@ -153,7 +153,7 @@ node index.js
     }
    ]
    ```
-8. **Create Review **
+6. **Create Review **
 
     -POST/reviews/:id/reviews (Use Book ID)
    
@@ -203,7 +203,7 @@ node index.js
 
       ```
 
-   9. **Delete a review**
+   8. **Delete a review**
 
        -DELETE /reviews/:id (Use review ID)
       
@@ -243,11 +243,11 @@ node index.js
    
       To test this API, use Postman with:
 
-       1.Bearer token (from login) for authenticated routes
+       1. Bearer token (from login) for authenticated routes
 
-       2.JSON body format
+       2. JSON body format
 
-       3.Sample request/response examples as shown above
+       3. Sample request/response examples as shown above
 
 
 
