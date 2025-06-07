@@ -55,8 +55,8 @@ node index.js
 
 1. **Sign Up**
  
- POST /auth/signup
- Body:
+ -POST /auth/signup
+ -Body:
  ```bash
 {
   "username": "omkar",
@@ -64,9 +64,143 @@ node index.js
   "password": "omkar@123",
   "mobile": "9876543210"
 }
+```
+-Response:
+```bash
+{"message":"User registered successfully"}
+```
 
 2. **Login**
 
-POST/login
+-POST/auth/login
+-Body:
+```bash
+{
+  "email": "omkar@example.com",
+  "password": "123456"
+}
+```
+-Response:
+```bash
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ0MmE1ZjU3OTMyYmY4ZmFkZDUzODMiLCJpYXQiOjE3NDkzMDQwMzd9.Bt7il32xiENEA0Q9zmCuIdCsf7EMKKHQcHzDg7rlmVc","msg":"User login successfully"}
+```
+3. **GET books**
+
+-GET /books?page=1&limit=10&author=Omkar&genre=Fiction
+-Response
+```bash
+{
+  "books": [
+    {
+      "_id": "684412d031dcbdfd8e1421cb",
+      "title": "My Book",
+      "author": "Omkar",
+      "genre": "Fiction",
+      "averageRating": 0,
+      "createdAt": "2025-06-07T10:22:08.600Z",
+      "updatedAt": "2025-06-07T10:22:08.600Z",
+      "__v": 0
+    }
+  ],
+  "totalRecords": ,1
+  "totalPages": 1,
+  "currentPage": 1
+}
+```
+4. ** Get Book by ID (with average rating + reviews)**
+   -GET /books/:id
+   -Response
+   ```bash
+   {
+    "books": [
+    {
+      "_id": "684412d031dcbdfd8e1421cb",
+      "title": "My Book",
+      "author": "Omkar",
+      "genre": "Fiction",
+      "averageRating": 0,
+      "createdAt": "2025-06-07T10:22:08.600Z",
+      "updatedAt": "2025-06-07T10:22:08.600Z",
+      "__v": 0
+    }
+   ],
+   "totalRecords": ,1
+   "totalPages": 1,
+   "currentPage": 1
+   }
+   ```
+5. ** Search books by title or author**
+    -GET/books/search?q=Rich
+   -Response
+   ```bash
+     [
+    {
+        "_id": "684443653d39da12463d47f0",
+        "title": "Rich Dad Poor Dad",
+        "author": "Robert T. Kiyosaki",
+        "genre": "Finance",
+        "averageRating": 3,
+        "createdAt": "2025-06-07T13:49:25.786Z",
+        "updatedAt": "2025-06-07T14:35:17.215Z",
+        "__v": 0
+    }
+   ]
+   ```
+6. **Create Review **
+   -POST/reviews/:id/reviews (Use Book ID)
+   -Body
+   ```bash
+   {
+    "rating": 4,
+     "comment": "Great book!"
+   }
+   ```
+   -Response
+   ```bash
+      {
+          "_id": "<review_id>",
+          "bookId": "684412d031dcbdfd8e1421cb",
+          "userId": "<user_id>",
+          "rating": 4,
+          "comment": "Great book!",
+          "createdAt": "2025-06-07T21:47:00.000Z",
+          "updatedAt": "2025-06-07T21:47:00.000Z",
+          "__v": 0
+      }
+   ```
+   7. **Update a Review
+      -PUT /reviews/:id (Use Review ID)
+      -Body
+      ```bash
+         {
+           "rating": 4,
+           "comment": "Great book!"
+        }
+      ```
+      -Response:
+      ```bash
+      {
+         "_id": "68445ba3b978a3fa05397a9e",
+          "bookId": "68445a8f2c5d911cf2d5f172",
+          "userId": "684442423d39da12463d47e9",
+         "rating": 2,
+         "comment": "badddd!",
+        "createdAt": "2025-06-07T15:32:51.161Z",
+       "updatedAt": "2025-06-07T16:47:54.749Z",
+       "__v": 0
+      }
+
+      ```
+
+   8. **Delete a review**
+       -DELETE /reviews/:id (Use review ID)
+       -Response:
+      ```bash
+      { message: 'Review deleted' }
+      ```
+      
+   
+   
+
 
 
